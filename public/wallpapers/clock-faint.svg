@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Clock at 0.3 opacity on the cloud sky.</title>
+  <defs>
+    <linearGradient id="faint-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d8fe0"/>
+      <stop offset="55%" stop-color="#7eb6f0"/>
+      <stop offset="100%" stop-color="#d7ecff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#faint-sky)"/>
+  <g fill="#ffffff">
+    <ellipse cx="280" cy="260" rx="170" ry="70"/>
+    <ellipse cx="390" cy="230" rx="120" ry="78"/>
+    <ellipse cx="470" cy="280" rx="150" ry="64"/>
+    <ellipse cx="980" cy="180" rx="200" ry="76"/>
+    <ellipse cx="1120" cy="150" rx="140" ry="80"/>
+    <ellipse cx="620" cy="720" rx="240" ry="80"/>
+    <ellipse cx="1320" cy="760" rx="220" ry="78"/>
+  </g>
+  <g opacity="0.3" transform="translate(800 480)" fill="none" stroke="#c6a15b">
+    <circle r="340" stroke-width="28" stroke-dasharray="18 22"/>
+    <circle r="230" stroke-width="18"/>
+    <circle r="140" stroke-width="14" stroke-dasharray="8 14" stroke="#f3ecdf"/>
+    <circle r="70" fill="#fff6dd" stroke="none"/>
+  </g>
+</svg>

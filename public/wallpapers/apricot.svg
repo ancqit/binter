@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Apricot</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8d7bf"/>
+      <stop offset="100%" stop-color="#fff8f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <circle cx="1180" cy="280" r="120" fill="#e08a45" opacity="0.35"/>
+  <circle cx="360" cy="700" r="80" fill="#e08a45" opacity="0.22"/>
+</svg>

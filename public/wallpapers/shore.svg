@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Shore</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4eef5"/>
+      <stop offset="100%" stop-color="#f7fcfd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <path d="M0 640c180 40 280-20 460 10s300 70 460 20 360-40 680 10v320H0z" fill="#5aa7c2" opacity="0.25"/>
+</svg>

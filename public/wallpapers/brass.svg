@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Brass</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e7d7b0"/>
+      <stop offset="100%" stop-color="#f7f4ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <g stroke="#a6843d" stroke-width="2" opacity="0.35">
+    <path d="M0 180h1600M0 210h1600M0 240h1600M0 520h1600M0 550h1600M0 760h1600M0 790h1600"/>
+  </g>
+  <circle cx="1240" cy="360" r="90" fill="none" stroke="#6e5420" stroke-width="8" opacity="0.35"/>
+</svg>

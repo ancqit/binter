@@ -1,0 +1,13 @@
+{
+  "name": "binter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 127.0.0.1 --port 5173",
+    "build": "tsc --noEmit && vite build"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "vite": "^6.3.5"
+  }
+}

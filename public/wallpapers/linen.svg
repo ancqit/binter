@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Linen</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe4d4"/>
+      <stop offset="100%" stop-color="#fbf7f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <g stroke="#b08968" stroke-width="1" opacity="0.35">
+    <path d="M0 80h1600M0 160h1600M0 240h1600M0 320h1600M0 400h1600M0 480h1600M0 560h1600M0 640h1600M0 720h1600M0 800h1600M0 880h1600"/>
+  </g>
+</svg>
