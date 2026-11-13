@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Meadow</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d5ebc8"/>
+      <stop offset="100%" stop-color="#f7fbf4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <g fill="#6fa35a" opacity="0.28">
+    <ellipse cx="260" cy="780" rx="220" ry="70"/>
+    <ellipse cx="860" cy="820" rx="280" ry="80"/>
+    <ellipse cx="1320" cy="760" rx="200" ry="64"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Sky</title>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d5e4fb"/>
+      <stop offset="100%" stop-color="#f8fbff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="300" cy="240" rx="140" ry="48"/>
+    <ellipse cx="1100" cy="200" rx="180" ry="56"/>
+    <ellipse cx="760" cy="720" rx="200" ry="50"/>
+  </g>
+</svg>

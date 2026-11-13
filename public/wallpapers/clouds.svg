@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img">
+  <title>Clouds. A Windows sky.</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d8fe0"/>
+      <stop offset="55%" stop-color="#7eb6f0"/>
+      <stop offset="100%" stop-color="#d7ecff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <g fill="#ffffff">
+    <ellipse cx="280" cy="260" rx="170" ry="70"/>
+    <ellipse cx="390" cy="230" rx="120" ry="78"/>
+    <ellipse cx="470" cy="280" rx="150" ry="64"/>
+    <ellipse cx="180" cy="300" rx="110" ry="52"/>
+    <ellipse cx="980" cy="180" rx="200" ry="76"/>
+    <ellipse cx="1120" cy="150" rx="140" ry="80"/>
+    <ellipse cx="1240" cy="210" rx="160" ry="62"/>
+    <ellipse cx="860" cy="220" rx="100" ry="48"/>
+    <ellipse cx="620" cy="640" rx="240" ry="80"/>
+    <ellipse cx="820" cy="600" rx="160" ry="86"/>
+    <ellipse cx="480" cy="670" rx="140" ry="58"/>
+    <ellipse cx="1320" cy="720" rx="220" ry="78"/>
+    <ellipse cx="1480" cy="680" rx="130" ry="70"/>
+    <ellipse cx="1160" cy="750" rx="150" ry="60"/>
+  </g>
+  <g fill="#e7f3ff">
+    <ellipse cx="300" cy="310" rx="120" ry="28" opacity="0.85"/>
+    <ellipse cx="1080" cy="230" rx="150" ry="30" opacity="0.8"/>
+    <ellipse cx="700" cy="690" rx="160" ry="28" opacity="0.85"/>
+    <ellipse cx="1360" cy="770" rx="140" ry="26" opacity="0.8"/>
+  </g>
+</svg>
