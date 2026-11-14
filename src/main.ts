@@ -18,6 +18,7 @@ import {
   type Sheet,
   type StoredFile,
 } from './api';
+import { keepPortal } from './flow';
 import { applyTheme, chooseTheme, currentTheme, themes } from './themes';
 
 const SESSION_KEY = 'binter.session';
@@ -607,6 +608,9 @@ async function openScreen(screen: Screen): Promise<void> {
     }
   } catch (error) {
     catchError(error);
+    if (!keepPortal(state.token)) {
+      return;
+    }
   }
   renderShell();
 }
@@ -815,6 +819,9 @@ async function acceptIds(ids: string[]): Promise<void> {
     paintStack();
   } catch (error) {
     catchError(error);
+    if (!keepPortal(state.token)) {
+      return;
+    }
     try {
       await loadRows();
       paintStack();
