@@ -1,0 +1,41 @@
+<article class="note">
+  <div class="note-top">
+    <h2 class="collect-no">{{ row().collect_number }}</h2>
+    <span class="pill">{{ row().bucket_name }}</span>
+  </div>
+  <p class="place">{{ row().location_name }} · {{ row().location_label }}</p>
+  <div class="lamps" role="group" [attr.aria-label]="'Collect ' + row().collect_number">
+    <span class="lamp" [class.on]="row().status === 'open'">
+      <i></i><span><b>Collect</b></span>
+    </span>
+    <span class="lamp received" [class.on]="row().status !== 'open'">
+      <i></i>
+      <span>
+        <b>Received</b>
+        @if (row().receiver; as receiver) {
+          <small>{{ receiver.name }}</small>
+          <small class="plate">{{ receiver.vehicle_number }}</small>
+        }
+        @if (row().status !== 'open' && row().accepted_at; as from) {
+          <time class="timer">{{ portal.elapsed(from, row().completed_at) }}</time>
+        }
+      </span>
+    </span>
+  </div>
+  @if (photo()) {
+    <img class="shot" alt="" [src]="photo()" />
+  }
+  @if (clip()) {
+    <video class="clip" controls playsinline preload="metadata" [src]="clip()"></video>
+  }
+  @if (portal.role() === 'receiver' && row().status === 'open') {
+    <label class="take">
+      <input type="checkbox" [checked]="taken()" (change)="toggle($event)" />
+      <span>Take</span>
+    </label>
+    <button class="solid" type="button" (click)="accept()">Accept</button>
+  }
+  @if (portal.role() === 'receiver' && row().status === 'accepted') {
+    <button class="quiet" type="button" (click)="complete()">Collected</button>
+  }
+</article>

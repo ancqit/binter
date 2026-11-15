@@ -1,0 +1,49 @@
+<form class="sheet" (submit)="submit($event, place.value)">
+  <h1>Raise a collect</h1>
+  <p class="lede">Choose the place and the bucket. Collect sends it to the vehicles.</p>
+  <span class="field-label">Location</span>
+  <div class="segment" role="group">
+    @for (item of locations; track item.id) {
+      <button
+        type="button"
+        (click)="pick('location', item.id)"
+        [attr.aria-pressed]="item.id === portal.location()"
+      >
+        {{ item.name }}
+      </button>
+    }
+  </div>
+  <label class="field-label" for="place">Place</label>
+  <input #place id="place" name="place" type="text" maxlength="60" autocomplete="off" />
+  <span class="field-label">Bucket</span>
+  <div class="buckets">
+    @for (item of buckets; track item.id) {
+      <button
+        class="bucket"
+        type="button"
+        [class.on]="item.id === portal.bucket()"
+        (click)="pick('bucket', item.id)"
+        [attr.aria-pressed]="item.id === portal.bucket()"
+      >
+        <i class="dot"></i>
+        <span>
+          <strong>{{ item.name }}</strong>
+          <span>{{ item.note }}</span>
+        </span>
+      </button>
+    }
+  </div>
+  <label class="field-label" for="photo">Photograph</label>
+  <input id="photo" type="file" accept="image/jpeg,image/png,image/webp" (change)="onFile('photo', $event)" />
+  <p class="file-name" id="photo-name">{{ photoName() }}</p>
+  <label class="field-label" for="clip">Ten-second clip</label>
+  <input
+    id="clip"
+    type="file"
+    accept="video/mp4,video/webm,video/quicktime"
+    (change)="onFile('clip', $event)"
+  />
+  <p class="file-name" id="clip-name">{{ clipName() }}</p>
+  <p class="error" [hidden]="!portal.error()">{{ portal.error() }}</p>
+  <button class="solid wide" type="submit" [disabled]="portal.busy()">Collect</button>
+</form>

@@ -1,0 +1,26 @@
+<div class="backdrop" (click)="themes.close()">
+  <div
+    class="dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="theme-title"
+    (click)="$event.stopPropagation()"
+  >
+    <h2 id="theme-title">Theme</h2>
+    <p class="lede">A theme is the view and the wallpaper together.</p>
+    <div class="theme-grid">
+      @for (theme of themes.list; track theme.id) {
+        <button
+          class="theme-choice"
+          type="button"
+          [class.on]="theme.id === themes.current().id"
+          (click)="themes.choose(theme.id)"
+        >
+          <span class="swatch" [style.background-image]="'url(' + theme.preview + ')'"></span>
+          <span class="swatch-name">{{ theme.name }}</span>
+          <span class="swatch-view">{{ theme.view }}</span>
+        </button>
+      }
+    </div>
+  </div>
+</div>

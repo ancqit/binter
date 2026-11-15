@@ -1,0 +1,28 @@
+<section class="sheet">
+  <h1>{{ portal.role() === 'receiver' ? 'Collects' : 'Raised' }}</h1>
+  <p class="lede">
+    @if (portal.role() === 'receiver') {
+      Take one or several. Accept starts the timer and lights Received for the person who asked.
+    } @else {
+      Collect stays lit until a vehicle takes it. Received lights with their name and number.
+    }
+  </p>
+  <p class="error" [hidden]="!portal.error()">{{ portal.error() }}</p>
+  <div id="stack">
+    @if (portal.rows().length === 0) {
+      <p class="empty">{{ portal.role() === 'receiver' ? 'No collect is up.' : 'No collect is waiting.' }}</p>
+    } @else {
+      @for (row of portal.rows(); track row.id) {
+        <app-collect-card [row]="row" />
+      }
+      @if (portal.role() === 'receiver' && portal.selected().size > 0) {
+        <div class="accept-bar">
+          <span>{{
+            portal.selected().size === 1 ? '1 selected' : portal.selected().size + ' selected'
+          }}</span>
+          <button class="solid" type="button" (click)="portal.acceptSelected()">Accept</button>
+        </div>
+      }
+    }
+  </div>
+</section>

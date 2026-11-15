@@ -226,7 +226,7 @@ export function currentTheme(): Theme {
 
 export function applyTheme(theme: Theme): void {
   const root = document.documentElement;
-  root.dataset.theme = theme.id;
+  root.dataset['theme'] = theme.id;
   const pairs: Record<string, string> = {
     '--paper': theme.paper,
     '--ink': theme.ink,

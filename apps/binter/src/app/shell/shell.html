@@ -1,0 +1,43 @@
+<div class="frame">
+  <header class="top">
+    <div>
+      <p class="brand">Sunskriti</p>
+      <p class="who">{{ portal.who() }}</p>
+    </div>
+    <div class="actions">
+      <button class="leave" type="button" (click)="themes.show()">Theme</button>
+      <button class="leave" type="button" (click)="portal.leave()">Leave</button>
+    </div>
+  </header>
+  <div id="outlet">
+    @switch (portal.screen()) {
+      @case ('raise') {
+        <app-raise />
+      }
+      @case ('papers') {
+        <app-papers />
+      }
+      @case ('sheet') {
+        <app-sheet />
+      }
+      @default {
+        <app-requests />
+      }
+    }
+  </div>
+  <nav class="dock">
+    @if (portal.role() === 'notifier') {
+      <button type="button" (click)="open('raise')" [class.on]="portal.screen() === 'raise'">Raise</button>
+      <button type="button" (click)="open('requests')" [class.on]="portal.screen() === 'requests'">
+        Requests<em id="open-count">{{ portal.openCount() > 0 ? ' ' + portal.openCount() : '' }}</em>
+      </button>
+    } @else if (portal.role() === 'receiver') {
+      <button type="button" (click)="open('papers')" [class.on]="portal.screen() === 'papers'">Papers</button>
+      <button type="button" (click)="open('requests')" [class.on]="portal.screen() === 'requests'">
+        Collects<em id="open-count">{{ portal.openCount() > 0 ? ' ' + portal.openCount() : '' }}</em>
+      </button>
+    } @else {
+      <button type="button" class="on" (click)="open('sheet')">Sheet</button>
+    }
+  </nav>
+</div>

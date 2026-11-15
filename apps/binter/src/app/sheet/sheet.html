@@ -1,0 +1,72 @@
+<section class="sheet">
+  <h1>Sheet</h1>
+  <p class="lede">Raised collects. The bucket clears after 30 days.</p>
+  @if (portal.gist(); as gist) {
+    <div class="gist">
+      <div><span>Waiting</span><strong>{{ gist.open }}</strong></div>
+      <div><span>On the way</span><strong>{{ gist.accepted }}</strong></div>
+      <div><span>Collected</span><strong>{{ gist.done }}</strong></div>
+    </div>
+    <p class="counts">
+      @for (item of buckets; track item.id; let last = $last) {
+        {{ item.name }} {{ portal.bucketCount(item.id) }}{{ last ? '' : ' · ' }}
+      }
+    </p>
+    <p class="counts">
+      {{ gist.week }} this week · {{ gist.month }} this month · {{ gist.receivers }} vehicle{{
+        gist.receivers === 1 ? '' : 's'
+      }}
+      on file
+    </p>
+  }
+  <span class="field-label">Span</span>
+  <div class="segment" role="group">
+    <button type="button" (click)="span('week')" [attr.aria-pressed]="portal.span() === 'week'">
+      This week
+    </button>
+    <button type="button" (click)="span('month')" [attr.aria-pressed]="portal.span() === 'month'">
+      This month
+    </button>
+  </div>
+  <p class="error" [hidden]="!portal.error()">{{ portal.error() }}</p>
+  @if ((portal.sheet()?.rows.length ?? 0) === 0) {
+    <p class="empty">Nothing in this span.</p>
+  } @else {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Collect</th>
+            <th>When (IST)</th>
+            <th>Bucket</th>
+            <th>Place</th>
+            <th>Status</th>
+            <th>Vehicle</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of portal.sheet()?.rows ?? []; track row.id) {
+            <tr>
+              <td>{{ row.collect_number }}</td>
+              <td>{{ when(row.created_at) }}</td>
+              <td>{{ row.bucket_name }}</td>
+              <td>{{ row.location_name }} · {{ row.location_label }}</td>
+              <td>{{ statusWord(row.status) }}</td>
+              <td>
+                @if (row.receiver; as receiver) {
+                  {{ receiver.name }} {{ receiver.vehicle_number }}
+                }
+              </td>
+              <td>
+                @if (row.accepted_at; as from) {
+                  <time class="timer">{{ portal.elapsed(from, row.completed_at) }}</time>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>

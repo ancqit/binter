@@ -1,0 +1,43 @@
+<form class="sheet" (submit)="submit($event, name.value, vehicle.value)">
+  <h1>Papers</h1>
+  <p class="lede">Name, vehicle number, Aadhaar, driving licence, and the vehicle RC. Then the collects arrive.</p>
+  <label class="field-label" for="name">Name</label>
+  <input #name id="name" name="name" type="text" maxlength="80" autocomplete="name" [attr.value]="initialName" />
+  <label class="field-label" for="vehicle">Vehicle number</label>
+  <input
+    #vehicle
+    id="vehicle"
+    name="vehicle"
+    type="text"
+    maxlength="16"
+    autocapitalize="characters"
+    autocomplete="off"
+    [attr.value]="initialVehicle"
+  />
+  <label class="field-label" for="aadhaar">Aadhaar</label>
+  <input
+    id="aadhaar"
+    type="file"
+    accept="image/jpeg,image/png,image/webp,application/pdf"
+    (change)="onFile('aadhaar', $event)"
+  />
+  <p class="file-name">{{ aadhaarName() }}</p>
+  <label class="field-label" for="licence">Driving licence</label>
+  <input
+    id="licence"
+    type="file"
+    accept="image/jpeg,image/png,image/webp,application/pdf"
+    (change)="onFile('licence', $event)"
+  />
+  <p class="file-name">{{ licenceName() }}</p>
+  <label class="field-label" for="rc">Vehicle RC</label>
+  <input
+    id="rc"
+    type="file"
+    accept="image/jpeg,image/png,image/webp,application/pdf"
+    (change)="onFile('rc', $event)"
+  />
+  <p class="file-name">{{ rcName() }}</p>
+  <p class="error" [hidden]="!portal.error()">{{ portal.error() }}</p>
+  <button class="solid wide" type="submit" [disabled]="portal.busy()">Save papers</button>
+</form>

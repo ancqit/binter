@@ -1,0 +1,10 @@
+@if (portal.ready()) {
+  @if (portal.signedIn()) {
+    <app-shell />
+  } @else {
+    <app-gate />
+  }
+}
+@if (themes.opened()) {
+  <app-theme-dialog />
+}
