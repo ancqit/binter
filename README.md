@@ -32,17 +32,25 @@ The vehicle can take several collects. Accept starts a timer and lights Received
 
 Clock is the herbant sky with the rings at 0.3. Glass, brass, and kiln sit with the herbant themes.
 
-## Deploy
+## Workspace
 
-Connect this repo on Vercel. `vercel.json` publishes `dist` and sends `/api` to `https://herback.onrender.com`.
+The repo is an Nx workspace, the same shape as junctionFrontweb. The portal is the Angular app `apps/binter`. Gate, raise, requests, papers, sheet, and the theme dialog are components. The next app is another folder under `apps/`. Shared code goes in `libs/`.
 
-herback has to be deployed with the three numbers first, or login stays shut. The R2 bucket CORS needs this site's origin on `PUT`, the same as herbant and scrap, or the photograph will not upload.
-
-If the Vercel host is not `binter.vercel.app` or a `binter-….vercel.app` preview, add it to herback's `CORS_ORIGINS`.
+Nx Console is the editor extension for this workspace, with the Angular language service and Prettier beside it.
 
 ```bash
 npm install
 npm start
 ```
 
-The dev server is `http://127.0.0.1:5173`. It forwards `/api` to herback, as scrap's proxy does. Try the portal on Vercel.
+`npm start` is `nx serve binter` at `http://127.0.0.1:5173`. It forwards `/api` to herback, as scrap's proxy does. `npm test` runs the portal tests. `npm run build` writes `dist/apps/binter/browser`.
+
+## Deploy
+
+Connect this repo on Vercel. `vercel.json` publishes `dist/apps/binter/browser` and sends `/api` to `https://herback.onrender.com`.
+
+herback has to be deployed with the three numbers first, or login stays shut. The R2 bucket CORS needs this site's origin on `PUT`, the same as herbant and scrap, or the photograph will not upload.
+
+If the Vercel host is not `binter.vercel.app` or a `binter-….vercel.app` preview, add it to herback's `CORS_ORIGINS`.
+
+Try the portal on Vercel.

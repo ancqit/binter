@@ -154,7 +154,7 @@ html[data-theme='clock'] .leave {
   }
 }
 
-#app {
+app-root {
   position: relative;
   z-index: 1;
 }

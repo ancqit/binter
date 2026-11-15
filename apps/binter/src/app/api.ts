@@ -1,4 +1,4 @@
-/** Same-origin prefix. Vercel and vite forward /api to herback, then herback serves /binter. */
+/** Same-origin prefix. The dev server and Vercel forward /api to herback, then herback serves /binter. */
 export const API_URL = '/api';
 
 export type Role = 'notifier' | 'receiver' | 'admin';

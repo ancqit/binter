@@ -4,3 +4,16 @@ dist
 .env.local
 .DS_Store
 *.local
+
+# Nx
+.nx/
+*.tsbuildinfo
+.angular/
+
+# IDEs and editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json

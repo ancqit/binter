@@ -1,0 +1,14 @@
+<section class="gate">
+  <div class="theme-float">
+    <button class="leave" type="button" (click)="themes.show()">Theme</button>
+  </div>
+  <form class="card" (submit)="enter($event, number.value)">
+    <p class="brand">Sunskriti</p>
+    <h1>Enter the portal</h1>
+    <p class="lede">The authority gives the number. Metals and glass.</p>
+    <label class="field-label" for="portal-number">Number</label>
+    <input #number id="portal-number" name="token" type="text" autocomplete="off" maxlength="80" />
+    <button class="solid wide" type="submit" [disabled]="portal.busy()">Enter</button>
+    <p class="error" [hidden]="!portal.error()">{{ portal.error() }}</p>
+  </form>
+</section>
