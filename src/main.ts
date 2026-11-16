@@ -22,6 +22,7 @@ import { keepPortal } from './flow';
 import { applyTheme, chooseTheme, currentTheme, themes } from './themes';
 
 const SESSION_KEY = 'binter.session';
+const copyright = '© 2026 Sunskriti Data management company';
 
 const buckets = [
   { id: 'ferrous', name: 'Ferrous metal', note: 'Steel, iron, and other magnetic scrap.' },
@@ -521,6 +522,7 @@ function renderShell(): void {
     <header class="top">
       <div>
         <p class="brand">Sunskriti</p>
+        <p class="copyright">${copyright}</p>
         <p class="who">${esc(whoLine())}</p>
       </div>
       <div class="actions">
@@ -555,6 +557,7 @@ function renderGate(): void {
       <input id="portal-number" name="token" type="text" autocomplete="off" maxlength="80" />
       <button class="solid wide" type="submit">Enter</button>
       <p class="error" id="error" hidden></p>
+      <p class="copyright">${copyright}</p>
     </form>
   </section>`;
   if (state.error) {
