@@ -687,16 +687,16 @@ th {
   z-index: 5;
   display: grid;
   place-items: center;
-  padding: 16px;
+  padding: 72px 48px;
   background: rgba(36, 28, 32, 0.28);
 }
 
 .dialog {
-  width: min(520px, 100%);
-  max-height: min(720px, calc(100dvh - 32px));
+  width: min(336px, 100%);
+  max-height: min(420px, calc(100dvh - 144px));
   overflow: auto;
-  padding: 22px 20px 18px;
-  border-radius: var(--radius);
+  padding: 14px 12px 12px;
+  border-radius: 20px;
   background: var(--paper);
   color: var(--ink);
   box-shadow: 0 24px 70px rgba(58, 36, 48, 0.18);
@@ -704,23 +704,28 @@ th {
 
 .dialog h2 {
   margin: 0;
-  font-size: 32px;
+  font-size: 22px;
   letter-spacing: -0.03em;
+}
+
+.dialog .lede {
+  margin: 4px 0 0;
+  font-size: 13px;
 }
 
 .theme-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .theme-choice {
   display: grid;
-  gap: 4px;
-  padding: 8px;
+  gap: 2px;
+  padding: 4px;
   border: 1px solid transparent;
-  border-radius: 16px;
+  border-radius: 10px;
   background: transparent;
   color: inherit;
   text-align: left;
@@ -734,19 +739,22 @@ th {
 
 .swatch {
   display: block;
-  height: 72px;
-  border-radius: 12px;
+  height: 36px;
+  border-radius: 8px;
   background-color: var(--wash);
   background-size: cover;
   background-position: center;
 }
 
 .swatch-name {
+  font-size: 12px;
   font-weight: 600;
+  line-height: 1.15;
 }
 
 .swatch-view {
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 1.15;
   color: var(--gold-deep);
 }
 
