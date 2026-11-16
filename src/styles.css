@@ -185,6 +185,25 @@ html[data-theme='clock'] .leave {
   letter-spacing: 0.03em;
 }
 
+.copyright {
+  margin: 14px 0 0;
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  color: var(--gold-deep);
+}
+
+.top .copyright {
+  margin: 2px 0 0;
+  max-width: 16rem;
+}
+
+html[data-theme='clock'] .top .copyright {
+  color: rgba(244, 239, 228, 0.78);
+}
+
 .card h1,
 .sheet h1 {
   margin: 10px 0 0;
