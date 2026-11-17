@@ -20,6 +20,9 @@ import {
 } from './api';
 import { keepPortal } from './flow';
 import { applyTheme, chooseTheme, currentTheme, themes } from './themes';
+import { armWake } from './wake';
+
+armWake();
 
 const SESSION_KEY = 'binter.session';
 const copyright = '© 2026 Sunskriti Data management company';
