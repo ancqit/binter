@@ -59,7 +59,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node --experimental-strip-types --test apps/binter/src/app/flow.test.ts"
+        "command": "node --experimental-strip-types --test apps/binter/src/app/flow.test.ts apps/binter/src/app/wake.test.ts"
       }
     }
   }

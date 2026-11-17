@@ -43,7 +43,7 @@ npm install
 npm start
 ```
 
-`npm start` is `nx serve binter` at `http://127.0.0.1:5173`. It forwards `/api` to herback, as scrap's proxy does. `npm test` runs the portal tests. `npm run build` writes `dist/apps/binter/browser`.
+`npm start` is `nx serve binter` at `http://127.0.0.1:5173`. It forwards `/api` to herback, as scrap's proxy does. The open portal asks herback `/health` every 60 seconds, the same as scrap and herbant. `npm test` runs the portal tests. `npm run build` writes `dist/apps/binter/browser`.
 
 ## Deploy
 
