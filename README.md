@@ -34,7 +34,7 @@ Clock is the herbant sky with the rings at 0.3. Glass, brass, and kiln sit with 
 
 ## Deploy
 
-Connect this repo on Vercel. `vercel.json` publishes `dist` and sends `/api` to `https://herback.onrender.com`.
+Connect this repo on Vercel. `vercel.json` publishes `dist` and sends `/api` to `https://herback-1.onrender.com`.
 
 herback has to be deployed with the three numbers first, or login stays shut. The R2 bucket CORS needs this site's origin on `PUT`, the same as herbant and scrap, or the photograph will not upload.
 
